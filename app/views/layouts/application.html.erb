@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= title %></title>
+    <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+    <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        <%= image_tag("logo.png", :alt => "aw8", :class => "round") %>
+        <ul class="navigation round">
+          <li><%= link_to "Home", '#' %></li>
+          <li><%= link_to "Help", '#' %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+      </div> <!-- header -->
+      <div id="content" class="round">
+        <%= yield %>
+      </div> <!-- content -->
+    </div> <!-- container -->
+  </body>
+</html>
+
