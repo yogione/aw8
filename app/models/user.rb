@@ -11,4 +11,9 @@
 #
 
 class User < ActiveRecord::Base
+  attr_accessible :name, :email
+
+  validates_presence_of :name
+  validates_format_of :email :with => EmailRegex
+  validates_uniqueness_of :email case_sensitive => false
 end
